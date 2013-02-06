@@ -69,10 +69,11 @@ static int __index(lua_State *L) {
 }
 
 // Creates a new ObjC class
-static int __call(lua_State *L) {   
+static int __call(lua_State *L) {
+    
     const char *className = luaL_checkstring(L, 2);
     Class klass = objc_getClass(className);
-    
+
     if (!klass) {
         Class superClass;    
         if (lua_isuserdata(L, 3)) {
@@ -116,7 +117,7 @@ static int __call(lua_State *L) {
             class_addMethod(metaclass, @selector(allocWithZone:), (IMP)allocWithZone, "@@:^{_NSZone=}");
         }
     }
-        
+            
     wax_instance_create(L, klass, YES);
     
     return 1;

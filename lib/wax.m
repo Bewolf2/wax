@@ -10,6 +10,7 @@
 
 #import "wax.h"
 #import "wax_class.h"
+#import "wax_bind.h"
 #import "wax_instance.h"
 #import "wax_struct.h"
 #import "wax_helpers.h"
@@ -20,6 +21,7 @@
 #import "lauxlib.h"
 #import "lobject.h"
 #import "lualib.h"
+
 
 static void addGlobals(lua_State *L);
 static int waxRoot(lua_State *L);
@@ -69,6 +71,7 @@ void wax_setup() {
     luaL_openlibs(L); 
 
 	luaopen_wax_class(L);
+    luaopen_wax_bind(L);
     luaopen_wax_instance(L);
     luaopen_wax_struct(L);
 	
@@ -104,7 +107,7 @@ void wax_start(char* initScript, lua_CFunction extensionFunction, ...) {
 		char stdlib[] = "require 'wax'";
 		size_t stdlibSize = strlen(stdlib);
 	#endif
-
+    
 	if (luaL_loadbuffer(L, stdlib, stdlibSize, "loading wax stdlib") || lua_pcall(L, 0, LUA_MULTRET, 0)) {
 		fprintf(stderr,"Error opening wax scripts: %s\n", lua_tostring(L,-1));
 	}
@@ -128,13 +131,115 @@ void wax_start(char* initScript, lua_CFunction extensionFunction, ...) {
 	}
 	else {
 		// Load app
-		char appLoadString[512];
-		snprintf(appLoadString, sizeof(appLoadString), "local f = '%s' require(f:gsub('%%.[^.]*$', ''))", initScript); // Strip the extension off the file.
-		if (luaL_dostring(L, appLoadString) != 0) {
-			fprintf(stderr,"Error opening wax scripts: %s\n", lua_tostring(L,-1));
-		}
+        if(initScript != nil){
+     		char appLoadString[512];
+            snprintf(appLoadString, sizeof(appLoadString), "local f = '%s' require(f:gsub('%%.[^.]*$', ''))", initScript); // Strip the extension off the file.
+            if (luaL_dostring(L, appLoadString) != 0) {
+                fprintf(stderr,"Error opening wax scripts: %s\n", lua_tostring(L,-1));
+            }
+        }
 	}
+}
 
+void wax_unbind(void* classinstance) {
+    
+    lua_State *L = wax_currentLuaState();
+    
+    NSObject *obj = (NSObject *)classinstance;
+    const char *clsname = [NSStringFromClass([obj class]) cStringUsingEncoding:NSUTF8StringEncoding];
+    int clsaddr = (int)classinstance;
+    
+    wax_printStack(L);
+    //unbind this class bind
+    lua_getglobal(L, "waxunbindcontext");
+    if (lua_isnil(L, -1)){
+        
+        lua_newtable(L);
+        lua_pushstring(L, "classname");
+        lua_pushstring(L, clsname);
+        lua_rawset(L, -3);
+        //
+        lua_pushstring(L, "classaddr");
+        lua_pushnumber(L, (int)classinstance);
+        lua_rawset(L, -3);
+        //
+        lua_setglobal(L, "waxunbindcontext");
+    } else {
+        
+        lua_pushstring(L, "classname");
+        lua_pushstring(L, clsname);
+        lua_rawset(L, -3);
+        //
+        lua_pushstring(L, "classaddr");
+        lua_pushnumber(L, (int)classinstance);
+        lua_rawset(L, -3);
+    }
+    
+    lua_pop(L, 1);
+    
+    lua_getglobal(L, "waxUnbindClass");
+    int error = lua_pcall(L, 0, 0, 0);
+    if(error){
+        fprintf(stderr,"Error call waxUnbindClass: %s\n", lua_tostring(L,-1));
+    }
+}
+
+//script: the lua script in buffer
+//classinstance: the oc instance handler
+//classname: the classname for instance
+void wax_bind_string(char* scriptbuf, void* classinstance){
+    
+    lua_State *L = wax_currentLuaState();
+
+    wax_unbind(classinstance);
+
+    NSObject *obj = (NSObject *)classinstance;
+    const char *clsname = [NSStringFromClass([obj class]) cStringUsingEncoding:NSUTF8StringEncoding];
+    int clsaddr = (int)classinstance;
+
+    lua_getglobal(L, "waxbindcontext");
+    if (lua_isnil(L, -1)){
+        
+        lua_newtable(L);
+        lua_pushstring(L, "classname");
+        lua_pushstring(L, clsname);
+        lua_rawset(L, -3);
+        
+        lua_pushstring(L, "classaddr");
+        lua_pushnumber(L, clsaddr);
+        lua_rawset(L, -3);
+        
+        lua_setglobal(L, "waxbindcontext");
+    } else {
+        
+        lua_pushstring(L, "classname");
+        lua_pushstring(L, clsname);
+        lua_rawset(L, -3);
+        
+        lua_pushstring(L, "classaddr");
+        lua_pushnumber(L, clsaddr);
+        lua_rawset(L, -3);
+    }
+        
+    lua_pop(L, 1);
+
+    if (luaL_dostring(L, scriptbuf) != 0) {
+        fprintf(stderr,"Error opening wax bind string: %s\n", lua_tostring(L,-1));
+    }
+}
+
+//this function shoule be called after wax_start()
+void wax_bind(char* path, char* requireScript, void* classinstance) {
+	
+    NSString *str = [NSString stringWithUTF8String:path];
+    str = [str stringByAppendingString:@"/"];
+    str = [str stringByAppendingString:[NSString stringWithUTF8String:(char*)requireScript]];
+    NSError *error = nil;
+    NSString *lrcCount = [[NSString stringWithContentsOfFile:str encoding:NSUTF8StringEncoding error:&error] retain];
+
+    wax_bind_string((char*)[lrcCount cStringUsingEncoding:NSUTF8StringEncoding], classinstance);
+    
+    [lrcCount release];
 }
 
 void wax_startWithServer() {		
@@ -161,6 +266,7 @@ void wax_end() {
 
 static void addGlobals(lua_State *L) {
     lua_getglobal(L, "wax");
+    
     if (lua_isnil(L, -1)) {
         lua_pop(L, 1); // Get rid of the nil
         lua_newtable(L);
@@ -185,6 +291,7 @@ static void addGlobals(lua_State *L) {
     lua_setfield(L, -2, "isDebug");
 #endif
     
+    wax_printTable(L, -1);
     lua_pop(L, 1); // pop the wax global off
     
 

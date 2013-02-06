@@ -53,6 +53,8 @@ int luaopen_wax_struct(lua_State *L) {
     // metatable stores all the labeled structs and their mappings
     luaL_getmetatable(L, WAX_STRUCT_METATABLE_NAME);    
     lua_newtable(L);
+
+    
     lua_setfield(L, -2, LABELED_STRUCT_TABLE_NAME);
     
     END_STACK_MODIFY(L, 0);

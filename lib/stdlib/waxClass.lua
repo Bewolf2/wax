@@ -8,7 +8,9 @@ end
 function waxInlineClass(options)
   local className = options[1]
   local superclassName = options[2]
+
   local class = wax.class(className, superclassName)
+
   class.className = className
 
   if options.protocols then
@@ -25,11 +27,18 @@ function waxInlineClass(options)
     },
     {
       __newindex = function(self, key, value)
+        print('class set ['..key..'=')
+        print(value)
+        print(']')
         class[key] = value
       end,
 
       __index = function(self, key)
-        return class[key] or _G[key]
+        local vv = class[key] or _G[key]
+        print('class get ['..key..'=')
+        print(vv)
+        print(']')
+        return vv
       end,
 
     }

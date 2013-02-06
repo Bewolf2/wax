@@ -8,6 +8,8 @@
 
 void wax_setup();
 void wax_start(char *initScript, lua_CFunction extensionFunctions, ...);
+void wax_bind(char* path, char* scriptfile, void* classinstance);
+void wax_bind_string(char* script, void* classinstance);
 void wax_startWithServer();
 void wax_end();
 
