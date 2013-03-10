@@ -1,0 +1,364 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AD7B916F16EC7DC00001EC88 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD7B916E16EC7DC00001EC88 /* UIKit.framework */; };
+		AD7B917116EC7DC00001EC88 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD7B917016EC7DC00001EC88 /* Foundation.framework */; };
+		AD7B917316EC7DC00001EC88 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD7B917216EC7DC00001EC88 /* CoreGraphics.framework */; };
+		AD7B917916EC7DC00001EC88 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD7B917716EC7DC00001EC88 /* InfoPlist.strings */; };
+		AD7B917B16EC7DC00001EC88 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7B917A16EC7DC00001EC88 /* main.m */; };
+		AD7B917F16EC7DC00001EC88 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7B917E16EC7DC00001EC88 /* AppDelegate.m */; };
+		AD7B918116EC7DC00001EC88 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AD7B918016EC7DC00001EC88 /* Default.png */; };
+		AD7B918316EC7DC00001EC88 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD7B918216EC7DC00001EC88 /* Default@2x.png */; };
+		AD7B918516EC7DC00001EC88 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD7B918416EC7DC00001EC88 /* Default-568h@2x.png */; };
+		AD7B918816EC7DC00001EC88 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD7B918616EC7DC00001EC88 /* MainStoryboard.storyboard */; };
+		AD7B918B16EC7DC00001EC88 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7B918A16EC7DC00001EC88 /* ViewController.m */; };
+		AD7B91AD16EC858E0001EC88 /* libwax.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD7B919D16EC7E320001EC88 /* libwax.a */; };
+		AD7B91B216EC864B0001EC88 /* waxbind.lua in Resources */ = {isa = PBXBuildFile; fileRef = AD7B91B116EC864B0001EC88 /* waxbind.lua */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AD7B919C16EC7E320001EC88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD7B919516EC7E320001EC88 /* Framework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = Wax;
+		};
+		AD7B91AE16EC85A30001EC88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD7B919516EC7E320001EC88 /* Framework.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = Wax;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AD7B916A16EC7DC00001EC88 /* waxbind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = waxbind.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD7B916E16EC7DC00001EC88 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AD7B917016EC7DC00001EC88 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AD7B917216EC7DC00001EC88 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AD7B917616EC7DC00001EC88 /* waxbind-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "waxbind-Info.plist"; sourceTree = "<group>"; };
+		AD7B917816EC7DC00001EC88 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AD7B917A16EC7DC00001EC88 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AD7B917C16EC7DC00001EC88 /* waxbind-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "waxbind-Prefix.pch"; sourceTree = "<group>"; };
+		AD7B917D16EC7DC00001EC88 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AD7B917E16EC7DC00001EC88 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AD7B918016EC7DC00001EC88 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		AD7B918216EC7DC00001EC88 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		AD7B918416EC7DC00001EC88 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		AD7B918716EC7DC00001EC88 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		AD7B918916EC7DC00001EC88 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		AD7B918A16EC7DC00001EC88 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		AD7B919516EC7E320001EC88 /* Framework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Framework.xcodeproj; path = ../../tools/Framework/Framework.xcodeproj; sourceTree = "<group>"; };
+		AD7B91B116EC864B0001EC88 /* waxbind.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = waxbind.lua; path = scripts/waxbind.lua; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.lua; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AD7B916716EC7DC00001EC88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD7B91AD16EC858E0001EC88 /* libwax.a in Frameworks */,
+				AD7B916F16EC7DC00001EC88 /* UIKit.framework in Frameworks */,
+				AD7B917116EC7DC00001EC88 /* Foundation.framework in Frameworks */,
+				AD7B917316EC7DC00001EC88 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AD7B915F16EC7DC00001EC88 = {
+			isa = PBXGroup;
+			children = (
+				AD7B917416EC7DC00001EC88 /* waxbind */,
+				AD7B916D16EC7DC00001EC88 /* Frameworks */,
+				AD7B916B16EC7DC00001EC88 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AD7B916B16EC7DC00001EC88 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AD7B916A16EC7DC00001EC88 /* waxbind.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AD7B916D16EC7DC00001EC88 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD7B919516EC7E320001EC88 /* Framework.xcodeproj */,
+				AD7B916E16EC7DC00001EC88 /* UIKit.framework */,
+				AD7B917016EC7DC00001EC88 /* Foundation.framework */,
+				AD7B917216EC7DC00001EC88 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AD7B917416EC7DC00001EC88 /* waxbind */ = {
+			isa = PBXGroup;
+			children = (
+				AD7B91B016EC85DC0001EC88 /* scripts */,
+				AD7B917D16EC7DC00001EC88 /* AppDelegate.h */,
+				AD7B917E16EC7DC00001EC88 /* AppDelegate.m */,
+				AD7B918616EC7DC00001EC88 /* MainStoryboard.storyboard */,
+				AD7B918916EC7DC00001EC88 /* ViewController.h */,
+				AD7B918A16EC7DC00001EC88 /* ViewController.m */,
+				AD7B917516EC7DC00001EC88 /* Supporting Files */,
+			);
+			path = waxbind;
+			sourceTree = "<group>";
+		};
+		AD7B917516EC7DC00001EC88 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AD7B917616EC7DC00001EC88 /* waxbind-Info.plist */,
+				AD7B917716EC7DC00001EC88 /* InfoPlist.strings */,
+				AD7B917A16EC7DC00001EC88 /* main.m */,
+				AD7B917C16EC7DC00001EC88 /* waxbind-Prefix.pch */,
+				AD7B918016EC7DC00001EC88 /* Default.png */,
+				AD7B918216EC7DC00001EC88 /* Default@2x.png */,
+				AD7B918416EC7DC00001EC88 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AD7B919616EC7E320001EC88 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AD7B919D16EC7E320001EC88 /* libwax.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AD7B91B016EC85DC0001EC88 /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				AD7B91B116EC864B0001EC88 /* waxbind.lua */,
+			);
+			name = scripts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AD7B916916EC7DC00001EC88 /* waxbind */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD7B918E16EC7DC00001EC88 /* Build configuration list for PBXNativeTarget "waxbind" */;
+			buildPhases = (
+				AD7B916616EC7DC00001EC88 /* Sources */,
+				AD7B916716EC7DC00001EC88 /* Frameworks */,
+				AD7B916816EC7DC00001EC88 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD7B91AF16EC85A30001EC88 /* PBXTargetDependency */,
+			);
+			name = waxbind;
+			productName = waxbind;
+			productReference = AD7B916A16EC7DC00001EC88 /* waxbind.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AD7B916116EC7DC00001EC88 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = taobao;
+			};
+			buildConfigurationList = AD7B916416EC7DC00001EC88 /* Build configuration list for PBXProject "waxbind" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AD7B915F16EC7DC00001EC88;
+			productRefGroup = AD7B916B16EC7DC00001EC88 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AD7B919616EC7E320001EC88 /* Products */;
+					ProjectRef = AD7B919516EC7E320001EC88 /* Framework.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				AD7B916916EC7DC00001EC88 /* waxbind */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		AD7B919D16EC7E320001EC88 /* libwax.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libwax.a;
+			remoteRef = AD7B919C16EC7E320001EC88 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AD7B916816EC7DC00001EC88 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD7B917916EC7DC00001EC88 /* InfoPlist.strings in Resources */,
+				AD7B918116EC7DC00001EC88 /* Default.png in Resources */,
+				AD7B918316EC7DC00001EC88 /* Default@2x.png in Resources */,
+				AD7B918516EC7DC00001EC88 /* Default-568h@2x.png in Resources */,
+				AD7B918816EC7DC00001EC88 /* MainStoryboard.storyboard in Resources */,
+				AD7B91B216EC864B0001EC88 /* waxbind.lua in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AD7B916616EC7DC00001EC88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD7B917B16EC7DC00001EC88 /* main.m in Sources */,
+				AD7B917F16EC7DC00001EC88 /* AppDelegate.m in Sources */,
+				AD7B918B16EC7DC00001EC88 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AD7B91AF16EC85A30001EC88 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Wax;
+			targetProxy = AD7B91AE16EC85A30001EC88 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AD7B917716EC7DC00001EC88 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD7B917816EC7DC00001EC88 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AD7B918616EC7DC00001EC88 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD7B918716EC7DC00001EC88 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AD7B918C16EC7DC00001EC88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AD7B918D16EC7DC00001EC88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AD7B918F16EC7DC00001EC88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "waxbind/waxbind-Prefix.pch";
+				INFOPLIST_FILE = "waxbind/waxbind-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AD7B919016EC7DC00001EC88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "waxbind/waxbind-Prefix.pch";
+				INFOPLIST_FILE = "waxbind/waxbind-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AD7B916416EC7DC00001EC88 /* Build configuration list for PBXProject "waxbind" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD7B918C16EC7DC00001EC88 /* Debug */,
+				AD7B918D16EC7DC00001EC88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD7B918E16EC7DC00001EC88 /* Build configuration list for PBXNativeTarget "waxbind" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD7B918F16EC7DC00001EC88 /* Debug */,
+				AD7B919016EC7DC00001EC88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AD7B916116EC7DC00001EC88 /* Project object */;
+}
